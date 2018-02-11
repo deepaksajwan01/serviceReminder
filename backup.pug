@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  h1 #{title}
+  form(action="/articles/add", method="POST")
+    #form-group
+      label Title:
+      input.form-control(name="title", type="text")
+    #form-group
+      label Author:
+      input.form-control(name="author", type="text")
+    #form-group
+      label Body:
+      textarea.form-control(name="body")
+    input.btn.btn-primary(value="Submit", type="submit")      
+
+
+
+    extends layout
+
+block content  
+   h1 #{title}
+   div.container
+     p Display data here ....
+     ul.list-group         
+      each article, i in articles
+        li.list-group-item= article.title
+    
+  
+        

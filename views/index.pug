@@ -1,0 +1,10 @@
+extends layout
+
+block content  
+   h1 #{title}
+   div.container
+     p Display data here ....
+     ul.list-group         
+      each article, i in articles
+        li.list-group-item
+          a(href="article/"+article._id)= article.title
